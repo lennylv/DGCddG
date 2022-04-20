@@ -24,24 +24,24 @@ parser.add_argument('--wd', type=float, default=0, help='Weight decay (L2 loss o
 parser.add_argument('--layer', type=int, default=4, help='Number of hidden layers.')
 parser.add_argument('--hidden', type=int, default=512,help='Number of hidden.')
 parser.add_argument('--dropout', type=float, default=0.2, help='Dropout rate (1 - keep probability).')
-parser.add_argument('--dev', type=int, default=2, help='device id')
+parser.add_argument('--dev', type=int, default=0, help='device id')
 parser.add_argument('--alpha', type=float, default=0.5, help='alpha_l')
 parser.add_argument('--lamda', type=float, default=1, help='lamda.')
 parser.add_argument('--variant', action='store_true', default=False, help='GCN* model.')
-parser.add_argument('--dataset', type=str, default='..', help='evaluation on test set.')
+parser.add_argument('--dataset', type=str, default='trainset', help='evaluation on test set.')
 args = parser.parse_args()
 random.seed(args.seed)
 np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 torch.cuda.manual_seed(args.seed)
 
-cudaid = "cuda:"+str(args.dev)
+cudaid = "cuda:"+str(args.dev) if torch.cuda.is_available() else 'cpu'
 device = torch.device(cudaid)
 GRAD_CLIP = 5.
 NODES = 604
-SetName = 's4169'
-if SetName == 's4169':
-    NODES = 500
+# SetName = 's4169'
+# if SetName == 's4169':
+#     NODES = 500
 print('load '+SetName+'...')
 mut_features, mut_adjs, mut_nodes_number = processMutantFeaturesAndAdj(SetName, NODES)
 mut_features= mut_features[:, :65]
