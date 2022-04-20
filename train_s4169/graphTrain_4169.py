@@ -9,7 +9,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 import torch.utils.data as Data
 from utils import *
-from modelGBDT_4169 import *
+from model import *
 import torch.nn as nn
 from sklearn.metrics import f1_score
 import uuid
@@ -19,24 +19,24 @@ from loaddata import *
 # Training settings
 parser = argparse.ArgumentParser()
 parser.add_argument('--seed', type=int, default=42, help='Random seed.')
-parser.add_argument('--epochs', type=int, default=170, help='Number of epochs to train.')
+parser.add_argument('--epochs', type=int, default=150, help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.0001, help='Initial learning rate.')
 parser.add_argument('--wd', type=float, default=0, help='Weight decay (L2 loss on parameters).')
 parser.add_argument('--layer', type=int, default=4, help='Number of hidden layers.')
-parser.add_argument('--hidden', type=int, default=1024,help='Number of hidden.')
+parser.add_argument('--hidden', type=int, default=512,help='Number of hidden.')
 parser.add_argument('--dropout', type=float, default=0.2, help='Dropout rate (1 - keep probability).')
 parser.add_argument('--dev', type=int, default=1, help='device id')
 parser.add_argument('--alpha', type=float, default=0.5, help='alpha_l')
 parser.add_argument('--lamda', type=float, default=1, help='lamda.')
 parser.add_argument('--variant', action='store_true', default=False, help='GCN* model.')
-parser.add_argument('--dataset', type=str, default='testset1', help='evaluation on test set.')
+parser.add_argument('--dataset', type=str, default='ace2', help='evaluation on test set.')
 args = parser.parse_args()
 random.seed(args.seed)
 np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 torch.cuda.manual_seed(args.seed)
 
-cudaid = "cuda:"+str(args.dev)
+cudaid = "cuda:"+str(args.dev) if torch.cuda.is_available() else 'cpu'
 device = torch.device(cudaid)
 GRAD_CLIP = 5.
 NODES = 500
