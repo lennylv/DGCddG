@@ -46,14 +46,14 @@ parser.add_argument('--lamda', type=float, default=1, help='lamda.')
 parser.add_argument('--variant', action='store_true', default=False, help='GCN* model.')
 parser.add_argument('--test', action='store_true', default=False, help='evaluation on test set.')
 parser.add_argument('--modelPath', type=str, default='..', help='evaluation on test set.')
-parser.add_argument('--dataset', type=str, default='..', help='evaluation on test set.')
+parser.add_argument('--dataset', type=str, default='ace2', help='evaluation on test set.')
 args = parser.parse_args()
 random.seed(args.seed)
 np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 torch.cuda.manual_seed(args.seed)
 
-cudaid = "cuda:"+str(args.dev)
+cudaid = "cuda:"+str(args.dev) if torch.cuda.is_available() else 'cpu'
 device = torch.device(cudaid)
 GRAD_CLIP = 5.
 NODES = 604
@@ -150,7 +150,7 @@ y_pred, loss_test = validation()
 # Here, because the label values of S4169 are mutant - wild
 # take 'protein 1A22 ; chain A ; wild C ; id 171 ; mutant A' as an example, See table s1131 row 2; table s4169 row 24
 # except for S4169, all datasets are wild - mutant
-# so here we need a negative
+# so here, we need a negative
 y_pred = -y_pred
 y = test_labels.view(1, -1).squeeze(0)
 
