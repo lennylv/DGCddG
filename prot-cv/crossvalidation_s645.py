@@ -158,7 +158,8 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import KFold
 
 kf = KFold(n_splits=10, shuffle = True)
-# Y_pred = np.empty(len(Y_gr),)
+val_pcc = []
+Loss = []
 
 if SetName == 'ab645':
     import pickle as pkl
@@ -236,13 +237,12 @@ for train_index, test_index in split_folds:
         t = t1
         print('Epoch:{:04d}'.format(epoch+1), 'train_loss:',loss_train,' time:',round(tt,2),' train_pcc:',pearson_train)
     loss_val, pcc, y_pred = validation(model, mut_features_test, mut_adjs_test, wild_features_test, wild_adjs_test, test_labels, test_w_array, test_m_array, test_residue)
-    Y_pred = np.load(SetName + '_y_pred.npy')
-    Y_pred[test_index] = y_pred
-    np.save(SetName + '_y_pred', Y_pred)
-    
-Y_pred = np.load(SetName + '_y_pred.npy')
-pcc = scipy.stats.pearsonr(Y_pred, Y_gr)
-rmse =np.sqrt(mean_squared_error(Y_pred, Y_gr))
+    val_pcc.append(pcc)
+    Loss.append(loss_val)
+#     Y_pred = np.load(SetName + '_y_pred.npy')
+#     Y_pred[test_index] = y_pred
+#     np.save(SetName + '_y_pred', Y_pred)
+   
 
-print('pcc:', pcc[0], ' rmse:', rmse)
+print('pcc:', np.mean(pcc), ' rmse:', np.mean(Loss))
 
