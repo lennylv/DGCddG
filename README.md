@@ -6,7 +6,7 @@ DGCddG
 
 install:
 
-conda create -n dgc python==3.8.5 -y
+conda create -n dgc python==3.7.10 -y
 
 conda activate dgc
 
