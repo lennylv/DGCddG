@@ -1,4 +1,16 @@
+
+
 DGCddG
+
+############################################################################
+install:
+conda create -n dgc python==3.8.5 -y
+conda activate dgc
+pip install  --no-cache-dir torch==1.7.0+cu110 -f  https://download.pytorch.org/whl/torch_stable.html
+pip install scipy
+pip install skearn
+
+############################################################################
 to Reproduce experimental results: 
 before doing that, Unzip the data set and move it up to the next level. example: unzip train_1470/testset1/testset1.zip -> train_1470/
 
