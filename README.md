@@ -3,6 +3,7 @@
 DGCddG
 
 ############################################################################
+
 install:
 conda create -n dgc python==3.8.5 -y
 conda activate dgc
@@ -11,11 +12,11 @@ pip install scipy
 pip install skearn
 
 ############################################################################
+
 to Reproduce experimental results: 
 before doing that, Unzip the data set and move it up to the next level. example: unzip train_1470/testset1/testset1.zip -> train_1470/
 
-############################################################################
-
+----------------------------------------------------------------------------
 skempi2-m734, skempi2-2m888, skempi2-3m888, capri-t55, capri-t56:
 
 cd train_1470
@@ -30,7 +31,7 @@ you can also re-train the model by
 
 python graphTrain.py --dataset testset1
 
-############################################################################
+----------------------------------------------------------------------------
 
 ace2-418, spike-540:
 
@@ -44,7 +45,7 @@ you can also re-train the model by
 
 python graphTrain_4169.py --dataset ace2
 
-############################################################################
+----------------------------------------------------------------------------
 
 protein-level cv: ab645, s1131, s4169, s8838, s1131
 
