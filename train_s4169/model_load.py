@@ -106,7 +106,7 @@ gbdt_save_test = [0 for i in range(test_mut_features.shape[0])]
 print(mut_features.shape)
 print(test_mut_features.shape)
 
-model = torch.load('./model_4169_save.pkl')
+model = torch.load('./model_4169_save.pkl', map_location=device)
 model = model.to(device)
 def validation():
     model.eval()
@@ -164,7 +164,7 @@ if SetName == 'delta_29':
 i = [j for j in range(len(y_pred)) if np.isnan(y_pred[j])]
 y_pred = np.array(y_pred)
 y_pred[i] = 0.
-np.save('prediction/'+ SetName +'.npy',y_pred)
+# np.save('prediction/'+ SetName +'.npy',y_pred)
 pearson = scipy.stats.pearsonr(y, y_pred)[0]
 ken = kendall(y, y_pred)[0]
 rmsd = np.sqrt(mean_squared_error(test_labels, y_pred))
