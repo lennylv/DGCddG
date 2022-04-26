@@ -31,6 +31,8 @@ cd train_1470
 take testset1 as an example:
 
 python model_load.py --dataset testset1
+or
+python model_load.py --dataset testset1 --model_type 0
 
 you can also re-train the model by
 
