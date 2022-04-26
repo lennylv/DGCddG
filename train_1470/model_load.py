@@ -9,7 +9,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 import torch.utils.data as Data
 # from utils import *
-from model import *
+from modelGBDT import *
 import torch.nn as nn
 from sklearn.metrics import f1_score
 import uuid
@@ -28,6 +28,7 @@ parser.add_argument('--dev', type=int, default=0, help='device id')
 parser.add_argument('--alpha', type=float, default=0.5, help='alpha_l')
 parser.add_argument('--lamda', type=float, default=1, help='lamda.')
 parser.add_argument('--variant', action='store_true', default=False, help='GCN* model.')
+parser.add_argument('--model_type', type=str, default='1', help='evaluation on test set.')
 parser.add_argument('--dataset', type=str, default='testset1', help='evaluation on test set.')
 args = parser.parse_args()
 random.seed(args.seed)
@@ -39,7 +40,7 @@ cudaid = "cuda:"+str(args.dev) if torch.cuda.is_available() else 'cpu'
 device = torch.device(cudaid)
 GRAD_CLIP = 5.
 NODES = 604
-# SetName = 's4169'
+SetName = 'trainset'
 # if SetName == 's4169':
 #     NODES = 500
 print('load '+SetName+'...')
@@ -67,7 +68,7 @@ test_residue_features = get_residue_feature(SetName, stand=False)
 test_labels = get_labels(SetName)
 test_mutation_site = getMutIndex(SetName)
 
-train_residue_features, test_residue_features = standarize_residue(train_residue_features[:,-4:], test_residue_features[:, -4:])
+
 print('load done...')
 
 indexes = [i for i in range(0, len(wild_nodes_number))]
@@ -87,7 +88,16 @@ gbdt_save_test = [0 for i in range(test_mut_features.shape[0])]
 print(mut_features.shape)
 print(test_mut_features.shape)
 
-model = torch.load('./model_1470.pkl')
+model_path = args.model_type
+if model_path == '1':
+    model_path = './model_stand.pkl'
+    train_residue_features, test_residue_features = standarize_residue(train_residue_features[:,-4:], test_residue_features[:, -4:])
+else:
+    model_path = './model_1470.pkl'
+
+model = torch.load(model_path, map_location=device)
+
+
 model = model.to(device)
 def validation():
     model.eval()
@@ -134,11 +144,11 @@ if SetName == 'delta_29':
 i = [j for j in range(len(y_pred)) if np.isnan(y_pred[j])]
 y_pred = np.array(y_pred)
 y_pred[i] = 0.
-np.save('prediction/'+ SetName +'.npy',y_pred)
+
+# np.save('prediction/'+ SetName +'.npy',y_pred)
 pearson = scipy.stats.pearsonr(y, y_pred)[0]
 ken = kendall(y, y_pred)[0]
 rmsd = np.sqrt(mean_squared_error(test_labels, y_pred))
 print('loss:',rmsd,' pearson:', pearson, ' kandell:',ken)
 
-
-
+np.save('prediction/'+ SetName +'.npy',y_pred)
