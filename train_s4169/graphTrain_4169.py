@@ -9,7 +9,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 import torch.utils.data as Data
 from utils import *
-from model import *
+from modelGBDT_4169 import *
 import torch.nn as nn
 from sklearn.metrics import f1_score
 import uuid
