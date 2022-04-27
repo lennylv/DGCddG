@@ -4,6 +4,10 @@ DGCddG
 
 ############################################################################
 
+Any more question, please contact me : 20205227080@stu.suda.edu.cn
+
+############################################################################
+
 install:
 
 conda create -n dgc python==3.7.10 -y
@@ -18,7 +22,7 @@ pip install skearn
 
 ############################################################################
 
-to Reproduce experimental results: 
+Reproduce experimental results: 
 before doing that, Unzip the data set and move it up to the next level. example: unzip train_1470/testset1/testset1.zip -> train_1470/
 
 ----------------------------------------------------------------------------
