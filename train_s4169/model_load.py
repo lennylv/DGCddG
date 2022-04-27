@@ -60,6 +60,11 @@ NODES = 604
 SetName = 's4169'
 if SetName == 's4169':
     NODES = 500
+
+if args.dataset == 'deep_sars2':
+    print('Sorry, we failed to recompute the result of this dataset ... And we deleted the related content in the manuscript')
+    import sys
+    sys.exit()
 print('load '+SetName+'...')
 mut_features, mut_adjs, mut_nodes_number = processMutantFeaturesAndAdj(SetName, NODES)
 mut_features= mut_features[:, :65]
@@ -70,7 +75,6 @@ wild_features = wild_features[:, :65]
 train_residue_features = get_residue_feature(SetName, stand=False)
 train_labels = get_labels(SetName)
 train_mutaion_site = getMutIndex(SetName)
-
 
 
 SetName = args.dataset
