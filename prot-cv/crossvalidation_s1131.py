@@ -42,6 +42,7 @@ parser.add_argument('--dataset', default='s1131', help='dateset')
 parser.add_argument('--dev', type=int, default=0, help='device id')
 parser.add_argument('--alpha', type=float, default=0.5, help='alpha_l')
 parser.add_argument('--lamda', type=float, default=1, help='lamda.')
+parser.add_argument('--cv', type=int, default=0, help='cv or protein-level cv.')
 parser.add_argument('--variant', action='store_true', default=False, help='GCN* model.')
 args = parser.parse_args() 
 random.seed(args.seed)
@@ -176,6 +177,9 @@ else:
     divid = eval(divid)
     f.close()
     split_folds = divid
+
+if args.cv == 1:
+    split_folds = kf.split(ske)
 
 # for train_index, test_index in split_folds:
 for train_index, test_index in split_folds:
