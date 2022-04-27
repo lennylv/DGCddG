@@ -48,7 +48,7 @@ ace2-418, spike-540:
 
 cd train_4169
 
-(ace2: ace2-418, deep_sars2: spike-540)
+(ace2: spike-ace2-418,)
 
 python model_load.py --dataset ace2
 
