@@ -52,10 +52,6 @@ cd train_4169
 
 python model_load.py --dataset ace2
 
-you can also re-train the model by
-
-python graphTrain_4169.py --dataset ace2
-
 ----------------------------------------------------------------------------
 
 protein-level cv: ab645, s1131, s4169, s8838, s1131
