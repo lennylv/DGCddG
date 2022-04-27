@@ -1,3 +1,4 @@
+calculted by GeoPPI: 10.1371/journal.pcbi.1009284
 -1.43
 -0.91
 -1.08
