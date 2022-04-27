@@ -53,7 +53,7 @@ np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 torch.cuda.manual_seed(args.seed)
 
-cudaid = "cuda:"+str(args.dev) if torch.cuda.is_available() else 'cpu'
+cudaid = "cuda:"+str(args.dev)
 device = torch.device(cudaid)
 GRAD_CLIP = 5.
 NODES = 604
@@ -150,7 +150,8 @@ y_pred, loss_test = validation()
 # Here, because the label values of S4169 are mutant - wild
 # take 'protein 1A22 ; chain A ; wild C ; id 171 ; mutant A' as an example, See table s1131 row 2; table s4169 row 24
 # except for S4169, all datasets are wild - mutant
-# so here, we need a negative
+# so here we need a 
+y_pred = np.array(y_pred)
 y_pred = -y_pred
 y = test_labels.view(1, -1).squeeze(0)
 
@@ -164,11 +165,10 @@ if SetName == 'delta_29':
 i = [j for j in range(len(y_pred)) if np.isnan(y_pred[j])]
 y_pred = np.array(y_pred)
 y_pred[i] = 0.
-# np.save('prediction/'+ SetName +'.npy',y_pred)
 pearson = scipy.stats.pearsonr(y, y_pred)[0]
 ken = kendall(y, y_pred)[0]
 rmsd = np.sqrt(mean_squared_error(test_labels, y_pred))
 print('loss:',rmsd,' pearson:', pearson, ' kandell:',ken)
-
+np.save('prediction/'+ SetName +'.npy',y_pred)
 
 
