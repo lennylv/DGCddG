@@ -18,7 +18,7 @@ pip install  --no-cache-dir torch==1.7.0+cu110 -f  https://download.pytorch.org/
 
 pip install scipy
 
-pip install skearn
+pip install sklearn
 
 ############################################################################
 
