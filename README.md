@@ -23,7 +23,12 @@ pip install sklearn
 ############################################################################
 
 Reproduce experimental results: 
-before doing that, Unzip the data set and move it up to the next level. example: unzip train_1470/testset1/testset1.zip -> train_1470/
+
+before doing that, Unzip the data set and move it up to the next level. 
+
+I recommend using WinRAR on Windows to do this, as the zip command on Linux may cause unzipped files to be lost.
+
+example: unzip train_1470/testset1/testset1.zip -> train_1470/
 
 ----------------------------------------------------------------------------
 skempi2-m734, skempi2-2m888, skempi2-3m888, capri-t55, capri-t56:
