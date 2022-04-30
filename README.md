@@ -30,7 +30,7 @@ skempi2-m734, skempi2-2m888, skempi2-3m888, capri-t55, capri-t56:
 
 cd train_1470
 
-(testset1: skempi2-m734, testset2: skempi2-2m888, testset2_multiple_o: skempi2-3m888, capri_t56: capri_t56, capri_t55: capri_t55_o)
+(testset1: skempi2-m734, testset2: skempi2-2m888, testset2_multiple_o: skempi2-3m888, capri_t56: capri_t56, capri_t55_o: capri_t55)
 
 take testset1 as an example:
 
