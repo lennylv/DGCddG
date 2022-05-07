@@ -51,7 +51,7 @@ python graphTrain.py --dataset testset1
 
 ----------------------------------------------------------------------------
 
-ace2-418, spike-540:
+spike-ace2-418:
 
 cd train_4169
 
