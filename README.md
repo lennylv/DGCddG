@@ -8,7 +8,7 @@ Any more question, please contact to me : 20205227080@stu.suda.edu.cn
 
 ############################################################################
 
-install:
+### install dependency:
 
 conda create -n dgc python==3.7.10 -y
 
@@ -24,7 +24,7 @@ pip install sklearn
 
 ############################################################################
 
-Reproduce experimental results: 
+### Reproduce experimental results: 
 
 before doing that, Unzip the data set and move it up to the next level. 
 
@@ -41,13 +41,13 @@ cd train_1470
 
 take testset1 as an example:
 
-python model_load.py --dataset testset1
+- python model_load.py --dataset testset1
 or
-python model_load.py --dataset testset1 --model_type 0
+- python model_load.py --dataset testset1 --model_type 0
 
 you can also re-train the model by
 
-python graphTrain.py --dataset testset1
+- python graphTrain.py --dataset testset1
 
 ----------------------------------------------------------------------------
 
@@ -57,12 +57,12 @@ cd train_4169
 
 (ace2: spike-ace2-418,)
 
-python model_load.py --dataset ace2
+- python model_load.py --dataset ace2
 
 ----------------------------------------------------------------------------
 
-protein-level cv: ab645, s1131, s4169, s8838, s1131
+- protein-level cv: ab645, s1131, s4169, s8838, s1131
 
 cd pro-cv
 
-python crossvalidation_1131.py
+- python crossvalidation_1131.py
