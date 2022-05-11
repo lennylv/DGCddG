@@ -22,20 +22,33 @@ pip install scipy
 
 pip install sklearn
 
+
+### Generate Examples:
+- cd examples
+
+Unzip the data set. 
+
+I recommend using WinRAR on Windows to do this, as the zip command on Linux may cause unzipped files to be lost.
+
+example: unzip train.zip
+
+- python example.py --pdb T56 --mutation_chain G --residue_id 20 --wild E --mutant A
+
+
 ############################################################################
 
 ### Reproduce experimental results: 
 
 before doing that, Unzip the data set and move it up to the next level. 
 
-I recommend using WinRAR on Windows to do this, as the zip command on Linux may cause unzipped files to be lost.
+Again, I recommend using WinRAR on Windows to do this, as the zip command on Linux may cause unzipped files to be lost.
 
 example: unzip train_1470/testset1/testset1.zip -> train_1470/
 
 ----------------------------------------------------------------------------
 skempi2-m734, skempi2-2m888, skempi2-3m888, capri-t55, capri-t56:
 
-cd train_1470
+- cd train_1470
 
 (testset1: skempi2-m734, testset2: skempi2-2m888, testset2_multiple_o: skempi2-3m888, capri_t56: capri_t56, capri_t55_o: capri_t55)
 
@@ -55,7 +68,7 @@ you can also re-train the model by
 
 spike-ace2-418:
 
-cd train_4169
+- cd train_4169
 
 (ace2: spike-ace2-418,)
 
@@ -63,8 +76,12 @@ cd train_4169
 
 ----------------------------------------------------------------------------
 
-- protein-level cv: ab645, s1131, s4169, s8838, s1131
+protein-level cv: ab645, s1131, s4169, s8838, s1131
 
-cd pro-cv
+- cd pro-cv
 
 - python crossvalidation_1131.py
+
+
+
+
