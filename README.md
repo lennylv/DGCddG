@@ -81,6 +81,7 @@ spike-ace2-418:
 protein-level cv: ab645, s1131, s4169, s8838, s1131
 
 - cd pro-cv
+- python crossvalidation_1131.py
 
 ----------------------------------------------------------------------------
 ### To test your own datasets, you need prepare profiles from PSI-Blast and HHblits for each chain and the mutation_chain.
@@ -115,7 +116,7 @@ Then two profiles can be easily generated using the software SPIDER3 with these 
 
 Finally, move all '.pssm' and '.hhm' files to the directory 'examples/pdb_set/'
 
-- python crossvalidation_1131.py
+
 
 
 
