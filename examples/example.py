@@ -393,6 +393,6 @@ def main():
     wild = args.wild
     mutant = args.mutant
     pdb_to_res(pdb, pdb_path, mutation_chain, residue_id=residue_id, wild=wild, mutant=mutant)
-    # os.system('python model_load.py --dataset exampleset')
+    os.system('python model_load.py --dataset exampleset')
 
 main()
