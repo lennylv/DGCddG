@@ -32,7 +32,7 @@ Due to the limitation of Github, I have to split the zip file which is >25MB int
 
 You can WinRAR on Windows to unzip the trainset.zip, as the zip command on Linux may cause unzipped files to be lost.
 
-# or
+or
 
 You can use cat | tar command on Linux
 
@@ -48,13 +48,15 @@ at the position '20' is mutated to 'A' from 'E'.
 
 ### Reproduce experimental results: 
 
+- cd train_1470
+
 before doing that, Unzip the data set. 
 
 Again, you can use WinRAR on Windows to do this, as the zip command on Linux may cause unzipped files to be lost.
 
 example: unzip train_1470/testset1/testset1.zip -> train_1470/
 
-# or
+or
 
 use: cat | tar
 
@@ -68,7 +70,6 @@ use: cat | tar
 ----------------------------------------------------------------------------
 skempi2-m734, skempi2-2m888, skempi2-3m888, capri-t55, capri-t56:
 
-- cd train_1470
 
 (testset1: skempi2-m734, testset2: skempi2-2m888, testset2_multiple_o: skempi2-3m888, capri_t56: capri_t56, capri_t55: capri_t55)
 
