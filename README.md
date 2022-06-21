@@ -65,7 +65,7 @@ For example, make sure that the pdb file and this script are in the same directo
 - cd generate_sequence
 - python generate_seq.py --pdb T56 --mutation_chain G --residue_id 20 --wild E --mutant A
 
-Than two profiles can be easily generated using the software SPIDER3 with these sequence files. (Please see its README file) 
+Then two profiles can be easily generated using the software SPIDER3 with these sequence files. (Please see its README file) 
 
 Finally, move all '.pssm' and '.hhm' files to the directory 'examples/pdb_set/'
 
