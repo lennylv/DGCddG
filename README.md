@@ -30,6 +30,9 @@ Unzip the data set.
 
 I recommend using WinRAR on Windows to do this, as the zip command on Linux may cause unzipped files to be lost.
 
+As an example, we prepare a 'T56.pdb' and two profiles for each chain of 'T56.pdb' and mutant chain, in this example, the mutant chain is 'G' and the residue 
+at the position '20' is mutated to 'A' from 'E'.
+
 example: unzip train.zip
 
 - python example.py --pdb T56 --mutation_chain G --residue_id 20 --wild E --mutant A
