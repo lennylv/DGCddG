@@ -28,6 +28,7 @@ pip install sklearn
 
 Unzip the data set. 
 
+Due to the limitation of Github, I have to split the zip file which is >25MB into several files.
 I recommend using WinRAR on Windows to do this, as the zip command on Linux may cause unzipped files to be lost.
 
 example: unzip train.zip
