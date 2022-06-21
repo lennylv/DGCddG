@@ -90,8 +90,8 @@ you can also re-train the model by
 spike-ace2-418:
 
 - cd train_4169
-
-(ace2: spike-ace2-418,)
+- cat ./s4169/s4169.tar.gz* | tar -xzv
+- cat ./ace2/ace2.tar.gz* | tar -xzv
 
 - python model_load.py --dataset ace2
 
