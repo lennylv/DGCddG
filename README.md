@@ -139,7 +139,7 @@ Then two profiles can be easily generated using the software SPIDER3 with these 
 Finally, move all '.pssm' and '.hhm' files to the directory 'examples/pdb_set/'
 
 
-
+### I've been suffered a lot. The editor did not send your comment to me last month and just told me to improve my paper. Then I have to re-write the whole paper. Today (6.21) I received his lettle with your comment just before I decided to make a revision. To be honest, I did not think my paper deserve this publication when my boss (teachers) asked me to submit this manuscript. However, I am grateful that you give me this opportunity. So, please read this README carefully and it's not hard to reproduce the results because my classmates can do this without any difficulty.
 
 
 
