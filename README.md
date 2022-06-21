@@ -37,22 +37,26 @@ example: unzip train.zip
 As an example, we prepare a 'T56.pdb' and two profiles for each chain of 'T56.pdb' and mutant chain, in this example, the mutant chain is 'G' and the residue 
 at the position '20' is mutated to 'A' from 'E'.
 
-# To test other datasets, you need prepare profiles from PSI-Blast and HHblits for each chain and the mutation_chain.
+### To test other datasets, you need prepare profiles from PSI-Blast and HHblits for each chain and the mutation_chain.
 In this example, the mutation is 'E' to 'A' in chain 'G', this 'T56.pdb' has 3 chains, i.e. 'ABG'. So we prepare the profiles as follow:
+
 1: two profiles for chain A:
 'T56_A.pssm'
 'T56_A.hhm'
+
 2: two profiles for chain B:
 'T56_B.pssm'
 'T56_B.hhm'
+
 3: two profiles for chain G:
 'T56_G.pssm'
 'T56_G.hhm'
+
 4: two profiles for chain mutated G (this sequence is generated from chain G with a substitute in residue 20, 'E' -> 'A'):
 'mutant.hhm'
 'mutant.pssm'
 
-# If you have no idea to generate profiles from PSI-Blast or HHblits, you can download 'SPIDER3:Sequence-based prediction of structural features for proteins' from http://zhouyq-lab.szbl.ac.cn/download/, this software can generate generate two profiles for protein sequence to predict secondary structures.
+### If you have no idea to generate profiles from PSI-Blast or HHblits, you can download 'SPIDER3:Sequence-based prediction of structural features for proteins' from http://zhouyq-lab.szbl.ac.cn/download/, this software can generate generate two profiles for protein sequence to predict secondary structures.
 
 ############################################################################
 
