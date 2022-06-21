@@ -57,7 +57,7 @@ In this example, the mutation is 'E' to 'A' in chain 'G', this 'T56.pdb' has 3 c
 'mutant.hhm',
 'mutant.pssm'
 
-### If you have no idea to generate profiles from PSI-Blast or HHblits, you can download 'SPIDER3:Sequence-based prediction of structural features for proteins' from http://zhouyq-lab.szbl.ac.cn/download/, this software can generate generate two profiles for protein sequence to predict secondary structures.
+### If you have no idea to generate profiles from PSI-Blast or HHblits, you can download 'SPIDER3:Sequence-based prediction of structural features for proteins' from http://zhouyq-lab.szbl.ac.cn/download/, this software can generate two profiles for protein sequence to predict secondary structures.
 you should move use this software with protein sequence file, if you hove no idea to generate protein sequences from protein pdb files, you can use generate_seq.py
 
 For example, make sure that the pdb file and this script are in the same directory:
