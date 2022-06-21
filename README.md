@@ -97,10 +97,13 @@ spike-ace2-418:
 
 ----------------------------------------------------------------------------
 
-protein-level cv: ab645, s1131, s4169, s8838, s1131
+protein-level cv: ab645, s1131, s4169, s8838
 
 - cd pro-cv
 - python crossvalidation_1131.py
+
+mutation-level:
+- python crossvalidation_1131.py --type 1
 
 ----------------------------------------------------------------------------
 ### To test your own datasets, you need prepare profiles from PSI-Blast and HHblits for each chain and the mutation_chain.
