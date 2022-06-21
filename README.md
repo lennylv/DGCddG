@@ -29,10 +29,16 @@ pip install sklearn
 Unzip the data set. 
 
 Due to the limitation of Github, I have to split the zip file which is >25MB into several files.
-I recommend using WinRAR on Windows to do this, as the zip command on Linux may cause unzipped files to be lost.
+
+You can WinRAR on Windows to unzip the trainset.zip, as the zip command on Linux may cause unzipped files to be lost.
+
+# or
+
+You can use cat | tar command on Linux
 
 example: unzip train.zip
 
+- cat ./trainset.tar.gz* | tar -xzv
 - python example.py --pdb T56 --mutation_chain G --residue_id 20 --wild E --mutant A
 
 As an example, we prepare a 'T56.pdb' and two profiles for each chain of 'T56.pdb' and mutant chain, in this example, the mutant chain is 'G' and the residue 
@@ -42,18 +48,29 @@ at the position '20' is mutated to 'A' from 'E'.
 
 ### Reproduce experimental results: 
 
-before doing that, Unzip the data set and move it up to the next level. 
+before doing that, Unzip the data set. 
 
-Again, I recommend using WinRAR on Windows to do this, as the zip command on Linux may cause unzipped files to be lost.
+Again, you can use WinRAR on Windows to do this, as the zip command on Linux may cause unzipped files to be lost.
 
 example: unzip train_1470/testset1/testset1.zip -> train_1470/
+
+# or
+
+use: cat | tar
+
+- cat ./trainset/trainset.tar.gz* | tar -xzv
+- cat ./testset1/testset1.tar.gz* | tar -xzv
+- cat ./testset2/testset2.tar.gz* | tar -xzv
+- cat ./testset2_multiple/testset2_multiple_o.tar.gz* | tar -xzv
+- cat ./capri_t55/capri_t55.tar.gz* | tar -xzv
+- cat ./capri_t56/capri_t56.tar.gz* | tar -xzv
 
 ----------------------------------------------------------------------------
 skempi2-m734, skempi2-2m888, skempi2-3m888, capri-t55, capri-t56:
 
 - cd train_1470
 
-(testset1: skempi2-m734, testset2: skempi2-2m888, testset2_multiple_o: skempi2-3m888, capri_t56: capri_t56, capri_t55_o: capri_t55)
+(testset1: skempi2-m734, testset2: skempi2-2m888, testset2_multiple_o: skempi2-3m888, capri_t56: capri_t56, capri_t55: capri_t55)
 
 take testset1 as an example:
 
