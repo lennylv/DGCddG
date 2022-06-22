@@ -35,7 +35,7 @@ parser.add_argument('--wd', type=float, default=0, help='Weight decay (L2 loss o
 parser.add_argument('--layer', type=int, default=2, help='Number of hidden layers.')
 parser.add_argument('--hidden', type=int, default=512,help='Number of hidden.')
 parser.add_argument('--dropout', type=float, default=0.2, help='Dropout rate (1 - keep probability).')
-parser.add_argument('--NODES', type=int, default=646, help='Patience')
+parser.add_argument('--NODES', type=int, default=645, help='Patience')
 parser.add_argument('--dataset', default='ab645', help='dateset')
 parser.add_argument('--dev', type=int, default=0, help='device id')
 parser.add_argument('--alpha', type=float, default=0.5, help='alpha_l')
@@ -231,7 +231,7 @@ for train_index, test_index in split_folds:
     for epoch in range(args.epochs):
         loss_train, y_pred_train = train(model, optimizer, lr_scheduler, mut_features_train, mut_adjs_train, wild_features_train, wild_adjs_train, train_labels, train_w_array, train_m_array, train_residue)
         
-        pearson_train = scipy.stats.pearsonr(train_labels, y_pred_train)[0]
+        pearson_train = scipy.stats.pearsonr(train_labels.reshape(-1), y_pred_train)[0]
         t1 = time.time()
         tt = t1 - t
         t = t1
