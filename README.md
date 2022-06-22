@@ -106,6 +106,7 @@ spike-ace2-418:
 protein-level cv: ab645, s1131, s4169, s8838
 
 - cd pro-cv
+- cat ./s1131/s1131.tar.gz* | tar -xzv
 - python crossvalidation_1131.py
 
 mutation-level:
