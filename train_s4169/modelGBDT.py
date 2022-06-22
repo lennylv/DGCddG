@@ -48,22 +48,47 @@ class GCNIIppi(nn.Module):
         self.fcs = nn.ModuleList()
         self.fcs.append(nn.Linear(nfeat, nhidden))
         self.fcs.append(nn.Linear(nfeat, nhidden))
-        self.act_fn = nn.Sigmoid()
+        self.act_fn = nn.ReLU()
         self.sig = nn.Sigmoid()
         self.dropout = dropout
         self.alpha = alpha
         self.lamda = lamda
+        # self.fc_aux = nn.Linear( 60, nhidden // 32 )
         self.fc_aux = nn.Linear( 30, nhidden // 32 )
         self.fc_cross = nn.Linear( 600, nhidden )
 
         self.fc = nn.Linear(nhidden , nhidden // 32)
+##      self.fc = nn.Linear(nhidden, nclass)
+        # self.fc_2 = nn.Linear(nhidden // 16, 1)
         self.fc_2 = nn.Linear(nhidden // 32 + 4, 1)
+        self.fc_4 = nn.Linear(960, 1)
+        # self.fc_3 = nn.Linear(nhidden // 64, nhidden // 128)
+        self.fc_3 = nn.Linear(nhidden // 64, 1)
 
     def forward(self, x, adj, wild_adj, wild_feature, nodes, mutaion_site, aux):
         _layers = []
         x = F.dropout(x, self.dropout, training=self.training)
         wild_x = F.dropout(wild_feature, self.dropout, training=self.training)
 
+        # x_bio = x[:, :15]
+        # x_conser = x[:, 15:]
+        # wild_x_bio = wild_x[:, :15]
+        # wild_x_conser = wild_x[:, 15:]
+
+        # x_pssm = x[:, -20:]
+        # x_hhm = x[:, -50:-20]
+        # wild_x_pssm = wild_x[:, -20:]
+        # wild_x_hhm = wild_x[:, -50:-20]
+
+        # x =  x_hhm.unsqueeze(2).matmul(x_pssm.unsqueeze(1))
+        # x = self.fc_cross( x.flatten().view(self.NODES, -1) )
+
+        # wild_x = wild_x_hhm.unsqueeze(2).matmul(wild_x_pssm.unsqueeze(1))
+        # wild_x = self.fc_cross( wild_x.flatten().view(self.NODES, -1) )
+
+        # layer_inner = self.act_fn(x)
+        # wild_layer_inner = self.act_fn(wild_x)
+        # print(False in (x == wild_x))
         layer_inner = self.act_fn(self.fcs[0](x))
         wild_layer_inner = self.act_fn(self.fcs[0](wild_x))
 
@@ -94,17 +119,32 @@ class GCNIIppi(nn.Module):
         layer_inner_differ_mean = layer_inner_mean - wild_layer_inner_mean
         layer_inner_differ = torch.cat((layer_inner_differ_sum, layer_inner_differ_mean,), 0)
         
+        gbdt = torch.cat((layer_inner_sum, wild_layer_inner_sum, layer_inner_differ_sum), 0)
+
+        k = [i for i in range(17)]
+        q = [i for i in range(25, 65)]
+        k.extend(q)
         aux = aux.float()[-4:]
+        # aux = self.fc_aux(aux)
 
         aux = aux / len(mutaion_site)
-        layer_inner_differ = self.fc( layer_inner_differ_sum )
+        output = self.fc( layer_inner_differ_sum )
 
-        layer_inner_differ = F.dropout(layer_inner_differ, self.dropout, training=self.training)
-        output = self.act_fn( layer_inner_differ )
-        output = torch.cat((output, aux), 0)
+        
+        output = self.act_fn( output )
+        output = F.dropout( output, self.dropout, training=self.training )
+        output = torch.cat(( output, aux ), 0)
+
+        # output = output.view(-1, 1).matmul( aux.view(1, -1) ).flatten()
         output = self.fc_2( output )
+        # print(aux.size())
+        # print(output.size(), self.fc_2.weight.size())
+        # output = F.dropout( output, self.dropout, training=self.training )
+        # output = self.act_fn( output )
+        # output = self.fc_3(output)
+        l_i = layer_inner_differ_sum
 
-        return output
+        return output, l_i
 
 if __name__ == '__main__':
     pass
