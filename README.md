@@ -22,6 +22,7 @@ pip install scipy
 
 pip install sklearn
 
+pip install Bio
 
 ### Generate Examples:
 - cd examples
