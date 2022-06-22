@@ -237,7 +237,7 @@ for train_index, test_index in split_folds:
     for epoch in range(args.epochs):
         loss_train, y_pred_train = train(model, optimizer, lr_scheduler, mut_features_train, mut_adjs_train, wild_features_train, wild_adjs_train, train_labels, train_w_array, train_m_array, train_residue)
         
-        pearson_train = scipy.stats.pearsonr(train_labels, y_pred_train)[0]
+        pearson_train = scipy.stats.pearsonr(train_labels.reshape(-1), y_pred_train)[0]
         t1 = time.time()
         tt = t1 - t
         t = t1
