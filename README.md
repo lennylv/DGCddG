@@ -138,6 +138,7 @@ you can use this software with protein sequence file, if you have no idea to gen
 
 For example, make sure that the pdb file and this script are in the same directory:
 
+- cd pdb_set
 - python generate_seq.py --pdb T56 --mutation_chain G --residue_id 20 --wild E --mutant A
 
 Then two profiles can be easily generated using the software SPIDER3 with these sequence files. (Please see its README file) 
