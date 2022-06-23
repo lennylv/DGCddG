@@ -133,17 +133,17 @@ In this example, the mutation is 'E' to 'A' in chain 'G', this 'T56.pdb' has 3 c
 'mutant.hhm',
 'mutant.pssm'
 
-### If you have no idea to generate profiles from PSI-Blast or HHblits, you can download 'SPIDER3:Sequence-based prediction of structural features for proteins' from http://zhouyq-lab.szbl.ac.cn/download/, this software can generate two profiles for protein sequence to predict secondary structures.
+### If you have no idea to generate profiles from PSI-Blast or HHblits. You should install PSI-Blast and HHblits first and then you can download 'SPIDER3:Sequence-based prediction of structural features for proteins' from http://zhouyq-lab.szbl.ac.cn/download/, this software can generate two profiles for protein sequence to predict secondary structures.
 you can use this software with protein sequence file, if you have no idea to generate protein sequences from protein pdb files, you can use generate_seq.py
 
 For example, make sure that the pdb file and this script are in the same directory:
 
-- cd generate_sequence
 - python generate_seq.py --pdb T56 --mutation_chain G --residue_id 20 --wild E --mutant A
 
 Then two profiles can be easily generated using the software SPIDER3 with these sequence files. (Please see its README file) 
 
-Finally, move all '.pssm' and '.hhm' files to the directory 'examples/pdb_set/'
+- ./SPD3-numpy/run_list.sh ./*.seq
+
 
 
 ### I've been suffered a lot. The editor did not send your comment to me last month and just told me to improve my paper. Then I have to re-write the whole paper. Today (6.21) I received his lettle with your comment just before I decided to submit a revision. To be honest, I did not think my paper deserve this publication when my boss (teachers) asked me to submit this manuscript. However, I am grateful that you give me this opportunity. My code is simple enough because I've read so many similar papers and most of their codes have many limitation such as computational cost for pretraining or mutant structure prediction. So, please read this README carefully and it's not hard to reproduce the results because my classmates can do this without any difficulty
