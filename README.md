@@ -4,25 +4,25 @@ DGCddG
 
 ############################################################################
 
-# Any more question, please contact to me : 20205227080@stu.suda.edu.cn
+# Any more question, please let me know: 20205227080@stu.suda.edu.cn
 
 ############################################################################
 
 ### install dependency:
 
-conda create -n dgc python==3.7.10 -y
+- conda create -n dgc python==3.7.10 -y
 
-conda activate dgc
+- conda activate dgc
 
-pip install  --no-cache-dir torch==1.7.0+cu110 -f  https://download.pytorch.org/whl/torch_stable.html
+- pip install  --no-cache-dir torch==1.7.0+cu110 -f  https://download.pytorch.org/whl/torch_stable.html
 
 (pip3 install torch torchvision torchaudio)
 
-pip install scipy
+- pip install scipy
 
-pip install sklearn
+- pip install sklearn
 
-pip install Bio
+- pip install Bio
 
 ### Generate Examples:
 - cd examples
@@ -145,7 +145,7 @@ Then two profiles can be easily generated using the software SPIDER3 with these 
 
 - ./SPD3-numpy/run_list.sh ./*.seq
 
-### If you do not want to install PSI-Blast or HHblits, you can use their online webservers. Or you can send your data to me and I will do my best to generate  all profiles for you.
+If you do not want to install PSI-Blast or HHblits, you can use their online webservers. Or you can send your data to me and I will do my best to generate  all profiles for you.
 
 
 
