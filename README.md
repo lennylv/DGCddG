@@ -133,7 +133,7 @@ In this example, the mutation is 'E' to 'A' in chain 'G', this 'T56.pdb' has 3 c
 'mutant.hhm',
 'mutant.pssm'
 
-### If you have no idea to generate profiles from PSI-Blast or HHblits. You can check the generate_profiles.pdf and you can generate the two profiles step by step
+### If you have no idea to generate profiles from PSI-Blast or HHblits. You can check the profile_generation.pdf and you can generate the two profiles step by step
 
 If you have no idea to generate protein sequences from protein pdb files, you can use generate_seq.py
 
