@@ -8,7 +8,7 @@ DGCddG
  
  I will try my best to help you, please. I need an accept or reject.
  
- I have been suffered a lot.
+ I've been tortured so much. 
 
 ############################################################################
 
