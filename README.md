@@ -4,9 +4,14 @@ DGCddG
 
 ############################################################################
 
- Any more question, please let me know: 20205227080@stu.suda.edu.cn
+ Any more questions, please do not hesitate to contact me: 20205227080@stu.suda.edu.cn
+ 
+ I will try my best to help you, please. I need an accept or reject.
+ 
+ I have been suffered a lot.
 
 ############################################################################
+
 
 ### install dependency:
 
