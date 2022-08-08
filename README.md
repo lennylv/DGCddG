@@ -8,7 +8,7 @@ DGCddG
  
  I will try my best to help you, please. I need an accept or reject.
  
- I've been tortured so much. 
+ I've been tortured so much. I don't have much time for later things, such as finding a job and preparing for graduation.
 
 ############################################################################
 
