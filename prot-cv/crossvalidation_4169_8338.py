@@ -34,7 +34,7 @@ from loaddata_for_cross import getMutIndex
 # Training settings
 parser = argparse.ArgumentParser()
 parser.add_argument('--seed', type=int, default=42, help='Random seed.')
-parser.add_argument('--epochs', type=int, default=5, help='Number of epochs to train.')
+parser.add_argument('--epochs', type=int, default=200, help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.0001, help='Initial learning rate.')
 
 parser.add_argument('--warmup_updates', type=int, default=100)
