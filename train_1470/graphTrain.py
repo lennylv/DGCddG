@@ -31,12 +31,12 @@ from loaddata import getMutIndex
 from loaddata import standarize_residue
 # Training settings
 parser = argparse.ArgumentParser()
-parser.add_argument('--seed', type=int, default=42, help='Random seed.')
+parser.add_argument('--seed', type=int, default=19970915, help='Random seed.')
 parser.add_argument('--epochs', type=int, default=200, help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.0001, help='Initial learning rate.')
 parser.add_argument('--wd', type=float, default=0.0001, help='Weight decay (L2 loss on parameters).')
 parser.add_argument('--layer', type=int, default=4, help='Number of hidden layers.')
-parser.add_argument('--hidden', type=int, default=1024,help='Number of hidden.')
+parser.add_argument('--hidden', type=int, default=512,help='Number of hidden.')
 parser.add_argument('--dropout', type=float, default=0.2, help='Dropout rate (1 - keep probability).')
 parser.add_argument('--dev', type=int, default=1, help='device id')
 parser.add_argument('--alpha', type=float, default=0.5, help='alpha_l')
