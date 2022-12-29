@@ -159,12 +159,6 @@ y_pred = np.array(y_pred)
 y_pred = -y_pred
 y = test_labels.view(1, -1).squeeze(0)
 
-if SetName == 'delta_29':
-    y_pred = y_pred[:24]
-    y = y[:24]
-    test_labels = test_labels[:24]
-    print('alpha:',y_pred[2],'alpha*:',y_pred[-2],'delta:',y_pred[-1])
-    print('beta:',y_pred[-3],'gamma:',y_pred[-4],'delta*:',y_pred[-5])
 
 i = [j for j in range(len(y_pred)) if np.isnan(y_pred[j])]
 y_pred = np.array(y_pred)
@@ -172,7 +166,6 @@ y_pred[i] = 0.
 pearson = scipy.stats.pearsonr(y, y_pred)[0]
 ken = kendall(y, y_pred)[0]
 rmsd = np.sqrt(mean_squared_error(test_labels, y_pred))
+print('Here, the model is trained with four auxilary features, e.g ss, asa, phi and psi. However, in the paper, we provide the results of model with ss and asa')
 print('loss:',rmsd,' pearson:', pearson, ' kandell:',ken)
 np.save('prediction/'+ SetName +'.npy',y_pred)
-
-
