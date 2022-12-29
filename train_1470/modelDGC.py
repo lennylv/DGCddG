@@ -102,6 +102,9 @@ class GCNIIppi(nn.Module):
         q = [i for i in range(25, 65)]
         k.extend(q)
         # aux = aux.float()[-3].unsqueeze(0)
+        # -4: secondary structure
+        # -3: asa
+        # -2, -1: phi, psi
         aux = aux.float()[-4:-2]
         aux = aux * len(mutaion_site)
         # aux = self.act_fn(aux)
