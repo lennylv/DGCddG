@@ -114,7 +114,9 @@ mutation-level:
 - python crossvalidation_1131.py --cv 1
 
 ----------------------------------------------------------------------------
-Examples/* will be updated and profiles for all datasets will be uploaded when I go back to school
+
+Examples/* will be updated and profiles for all datasets will be uploaded in the future
+
 ----------------------------------------------------------------------------
 To test your own datasets, you need prepare profiles from PSI-Blast and HHblits for each chain and the mutation_chain.
 In this example, the mutation is 'E' to 'A' in chain 'G', this 'T56.pdb' has 3 chains, i.e. 'ABG'. So we prepare the profiles as follow:
