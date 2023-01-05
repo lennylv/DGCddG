@@ -13,7 +13,7 @@ import torch.optim as optim
 import torch.utils.data as Data
 from torch.utils.data import dataset
 # from utils import *
-from modelDGC_4 import *
+from modelDGC import *
 import torch.nn as nn
 from sklearn.metrics import f1_score
 import uuid
