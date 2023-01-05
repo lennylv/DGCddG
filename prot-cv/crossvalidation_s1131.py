@@ -251,8 +251,8 @@ for train_index, test_index in split_folds:
     Y_pred[test_index] = y_pred
     # np.save(SetName + '_y_pred', Y_pred)
     
-Y_pred = np.load(SetName + '_y_pred.npy')
+#Y_pred = np.load(SetName + '_y_pred.npy')
 pcc = scipy.stats.pearsonr(Y_pred, Y_gr)
 rmse =np.sqrt(mean_squared_error(Y_pred, Y_gr))
-
+np.save('s1131_pred.npy', Y_pred)
 print('pcc:', pcc[0], ' rmse:', rmse)
