@@ -117,6 +117,12 @@ mutation-level:
 
 Examples/* will be updated and profiles for all datasets will be uploaded in the future
 
+All Profiles are available now:
+
+https://pan.baidu.com/s/1kPErcJ_7-vkNnoxU-YKRcg
+
+password: zjml
+
 ----------------------------------------------------------------------------
 To test your own datasets, you need prepare profiles from PSI-Blast and HHblits for each chain and the mutation_chain.
 In this example, the mutation is 'E' to 'A' in chain 'G', this 'T56.pdb' has 3 chains, i.e. 'ABG'. So we prepare the profiles as follow:
