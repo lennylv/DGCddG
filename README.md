@@ -115,9 +115,9 @@ mutation-level:
 
 ----------------------------------------------------------------------------
 
-Examples/* will be updated and profiles for all datasets will be uploaded in the future
+Examples/* will be updated in the future
 
-All Profiles are available now:
+Besides, all Profiles are available:
 
 https://pan.baidu.com/s/1kPErcJ_7-vkNnoxU-YKRcg
 
