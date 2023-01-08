@@ -4,3 +4,5 @@
 [2] H. Cheng, Y. Liao, R. D. Schaeffer, N. V. Grishin. (2015) Manual classification strategies in the ECOD database. Proteins 83(7): 1238-1251.
 
 2. Some proteins may not be found in this distribution file. Therefore, we also used CD-HIT to generate protein clusters in sequence-level.
+
+3. The divided folds of s645 is from GeoPPI. While the ecod folds of s4169, s1131 and s8338 may not be extremly same with GeoPPI since they did not provide the folds. We just followed the steps provided by the authors to generate folds of the three datasets.
