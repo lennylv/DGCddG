@@ -287,8 +287,8 @@ for train_index, test_index in split_folds:
         t = t1
         print('Epoch:{:04d}'.format(epoch+1), 'train:',loss_train,' time:',round(tt,2),'s')
     print('testloss:', loss_val,' pcc:',pcc)
-    np.save('model/4169/4169_fold'+str(validation_time)+'.npy', y_pred)
-    np.save('model/4169/4169_testindex_'+str(validation_time)+'.npy',test_index)
+    np.save('prediction/4169/4169_fold'+str(validation_time)+'.npy', y_pred)
+    np.save('prediction/4169/4169_testindex_'+str(validation_time)+'.npy',test_index)
 
     pred = np.load('s4169_y_pred.npy')
     pred[test_index_copy] = y_pred
