@@ -146,5 +146,11 @@ y_pred[i] = 0.
 pearson = scipy.stats.pearsonr(y, y_pred)[0]
 ken = kendall(y, y_pred)[0]
 rmsd = np.sqrt(mean_squared_error(test_labels, y_pred))
-print('loss:',rmsd,' pearson:', pearson, ' kandell:',ken)
+
+# Here, because the label values of S4169 are wild - mutant. And it reflects the affinity change
+# take 'protein 1A22 ; chain A ; wild C ; id 171 ; mutant A' as an example, See table s1131 row 2; table s4169 row 24
+# Then for M1470, M734, M888, mutant - wild were adopted.
+# so here we need a reverse
+
+print('pearson:', -pearson, ' kandell:',-ken)
 
