@@ -191,7 +191,7 @@ Y_pred = np.empty(len(Y_gr),)
 validation_time = 0
 if SetName == 'ab645':
     import pickle as pkl
-    f = open('./ab645/divided-folds.pkl', 'rb')
+    f = open('./ab645/divided-folds_cdhit_ecod.pkl', 'rb')
     divid = pkl.load(f)
     f.close()
     split_folds = []
