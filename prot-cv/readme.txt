@@ -10,4 +10,5 @@ We also used CD-HIT to generate protein clusters in sequence-level for further v
 We simply followed the steps provided by the authors to generate folds of the three datasets. We validate the S1131 folds with GeoPPI under a set of parameters and 
 get the result of pearson=0.37~0.40 (because we lack of the training process of this predictor).
 
+2023/3/9
 4. Clusters need to be updated.
