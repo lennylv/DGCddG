@@ -7,8 +7,7 @@
 We also used CD-HIT to generate protein clusters in sequence-level for further validation.
 
 3. The divided folds of S645 is from GeoPPI. While the ecod folds of s4169 and s1131 may not be extremly same with GeoPPI since they did not provide the folds. 
-We simply followed the steps provided by the authors to generate folds of the three datasets. We validate the S1131 folds with GeoPPI under a set of parameters and 
-get the result of pearson=0.37~0.40 (because we lack of the training process of this predictor).
+We simply followed the steps provided by the authors to generate folds of the three datasets. 
 
 2023/3/9
 4. Clusters need to be updated. For each chain of one protein complex, ECOD server give a certain H_group name.
