@@ -48,7 +48,10 @@ class GCNIIppi(nn.Module):
         self.fcs = nn.ModuleList()
         self.fcs.append(nn.Linear(nfeat, nhidden))
         self.fcs.append(nn.Linear(nfeat, nhidden))
-        self.act_fn = nn.Sigmoid()
+        if NODES % 500 == 0:
+            self.act_fn = nn.Sigmoid()
+        else:
+            self.act_fn = nn.ReLU()
         self.sig = nn.Sigmoid()
         self.dropout = dropout
         self.alpha = alpha
@@ -60,7 +63,7 @@ class GCNIIppi(nn.Module):
         self.fc = nn.Linear(nhidden , nhidden // 32)
 ##      self.fc = nn.Linear(nhidden, nclass)
         # self.fc_2 = nn.Linear(nhidden // 16, 1)
-        self.fc_2 = nn.Linear(nhidden // 32 + 2, 1)
+        self.fc_2 = nn.Linear(nhidden // 32 + 4, 1)
         self.fc_4 = nn.Linear(960, 1)
         # self.fc_3 = nn.Linear(nhidden // 64, nhidden // 128)
         self.fc_3 = nn.Linear(nhidden // 64, 1)
@@ -104,7 +107,7 @@ class GCNIIppi(nn.Module):
         k = [i for i in range(17)]
         q = [i for i in range(25, 65)]
         k.extend(q)
-        aux = aux.float()[-4:-2]
+        aux = aux.float()[-4:]
 
         # aux = self.fc_aux(aux)
         # aux = aux / len(mutaion_site)
