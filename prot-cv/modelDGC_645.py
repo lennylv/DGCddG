@@ -48,7 +48,7 @@ class GCNIIppi(nn.Module):
         self.fcs = nn.ModuleList()
         self.fcs.append(nn.Linear(nfeat, nhidden))
         self.fcs.append(nn.Linear(nfeat, nhidden))
-        self.act_fn = nn.ReLU()
+        self.act_fn = nn.Sigmoid()
         self.sig = nn.Sigmoid()
         self.dropout = dropout
         self.alpha = alpha
