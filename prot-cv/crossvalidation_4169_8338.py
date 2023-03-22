@@ -199,7 +199,7 @@ if SetName == 'ab645':
         split_folds.append((divid[key][0], divid[key][1]))
 
 else:
-    f = open('./' + SetName + '/divided-ecod-folds.txt')
+    f = open('./' + SetName + '/divided-folds-hgroup.txt')
     divid = f.read()
     f.close()
     divid = eval(divid)
@@ -278,9 +278,6 @@ for train_index, test_index in split_folds:
         loss_val, pcc, X = validation(model, mut_features_test, mut_adjs_test, wild_features_test, wild_adjs_test, test_labels, test_w_array, test_m_array, test_residue)
 
         y_pred = X
-        if epoch == args.epochs // 10 * 9:
-            for p in optimizer.param_groups:
-                p['lr'] *= 0.1
 
         t1 = time.time()
         tt = t1 - t
