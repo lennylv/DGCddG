@@ -34,7 +34,7 @@ from loaddata_for_cross import getMutIndex
 # Training settings
 parser = argparse.ArgumentParser()
 parser.add_argument('--seed', type=int, default=42, help='Random seed.')
-parser.add_argument('--epochs', type=int, default=200, help='Number of epochs to train.')
+parser.add_argument('--epochs', type=int, default=100, help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.0001, help='Initial learning rate.')
 
 parser.add_argument('--warmup_updates', type=int, default=100)
@@ -45,12 +45,12 @@ parser.add_argument('--validation', type=int, default=5)
 
 parser.add_argument('--wd', type=float, default=0, help='Weight decay (L2 loss on parameters).')
 parser.add_argument('--layer', type=int, default=4, help='Number of hidden layers.')
-parser.add_argument('--hidden', type=int, default=256,help='Number of hidden.')
-parser.add_argument('--dropout', type=float, default=0.2, help='Dropout rate (1 - keep probability).')
+parser.add_argument('--hidden', type=int, default=1024,help='Number of hidden.')
+parser.add_argument('--dropout', type=float, default=0.15, help='Dropout rate (1 - keep probability).')
 parser.add_argument('--patience', type=int, default=100, help='Patience')
 parser.add_argument('--dataset', default='s4169', help='dateset')
-parser.add_argument('--dev', type=int, default=2, help='device id')
-
+parser.add_argument('--dev', type=int, default=0, help='device id')
+parser.add_argument('--Fold', type=int, default=1, help='Fold: 1-8')
 parser.add_argument('--alpha', type=float, default=0.5, help='alpha_l')
 parser.add_argument('--lamda', type=float, default=1, help='lamda.')
 parser.add_argument('--variant', action='store_true', default=False, help='GCN* model.')
@@ -214,7 +214,7 @@ for train_index, test_index in split_folds:
     # if validation_time != 5: continue
     # validation_time = s
     print('validation cross number:', validation_time)
-    # if validation_time not in validation_times :continue
+    if validation_time != args.Fold :continue
     # train_index, test_index = split_folds[s-1]
     test_index_copy = test_index
     mut_adjs_train = get_adjs(mut_adjs, train_index)
