@@ -9,7 +9,7 @@ contact to me and I will do more experiments although my results are bad enough.
 
 3. How can we make sure these folds are useful?
 We validate TopGBT and GeoPPI on the S1131 folds generate by us. We obtained the results as follow: 
-TopGBT: pearsonr is ~ 0.34 and RMSE ~ 2.31. GeoPPI: pearsonr ~0.33 and rmse ~ 0.235. It is worth noted that GeoPPI authors did not offer the training
+TopGBT: RMSE ~ 2.31. GeoPPI: rmse ~ 0.235. It is worth noted that GeoPPI authors did not offer the training
 process. We use the limit hyperparameters provided in the paper. Besides, GeoPPI needs select 100-140 features to make a better performance. Therefore, we use the
 sorted_idx.npy of S4169 to achieve this process. Because, this file is provided as the default selected features.
 
