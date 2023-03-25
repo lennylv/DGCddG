@@ -6,6 +6,10 @@
 2. The divided folds of S645 is from GeoPPI. While the ecod folds of s4169 and s1131 may not be extremly same with GeoPPI since they did not provide the folds. 
 We simply followed the steps provided by the authors to generate folds of the three datasets. 
 
+3. How can we make sure these folds are useful?
+We validate TopGBT and GeoPPI on the S1131 folds generate by us. We obtained the results as follow: 
+TopGBT: pearsonr ranged from 0.32 to 0.35. GeoPPI: pearsonr ranged from 0.34 to 0.39. It is worth noted that GeoPPI authors did not offer the training process. We use the limit hyperparameters provided in the paper. Besides, GeoPPI needs select 100-140 features to make a better performance. Therefore, we use the sorted_idx.npy of S4169 to achieve this process. Because, this file is provided as the default selected features.
+
 2023/3/9
 3. Clusters need to be updated. For each chain of one protein complex, ECOD server give a certain H_group name.
 Here we give the chain-level clusters
