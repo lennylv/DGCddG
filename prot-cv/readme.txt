@@ -3,11 +3,15 @@
 [1] H. Cheng, R. D. Schaeffer, Y. Liao, L. N. Kinch, J. Pei, S. Shi, B. H. Kim, N. V. Grishin. (2014) ECOD: An evolutionary classification of protein domains. PLoS Comput Biol 10(12): e1003926.
 [2] H. Cheng, Y. Liao, R. D. Schaeffer, N. V. Grishin. (2015) Manual classification strategies in the ECOD database. Proteins 83(7): 1238-1251.
 
-2. The divided folds of S645 is from GeoPPI. While the ecod folds of s4169 and s1131 may not be extremly same with GeoPPI since they randomly generated folds and they did not provide the folds. We simply followed the steps provided by the authors to generate folds of the three datasets. If you get their folds in some way, please contact to me and I will do more experiments although my results are bad enough.
+2. The divided folds of S645 is from GeoPPI. While the ecod folds of s4169 and s1131 may not be extremly same with GeoPPI since they randomly generated folds and they 
+did not provide the folds. We simply followed the steps provided by the authors to generate folds of the three datasets. If you get their folds in some way, please 
+contact to me and I will do more experiments although my results are bad enough.
 
 3. How can we make sure these folds are useful?
 We validate TopGBT and GeoPPI on the S1131 folds generate by us. We obtained the results as follow: 
-TopGBT: pearsonr ranged from 0.32 to 0.35. GeoPPI: pearsonr ranged from 0.34 to 0.39. It is worth noted that GeoPPI authors did not offer the training process. We use the limit hyperparameters provided in the paper. Besides, GeoPPI needs select 100-140 features to make a better performance. Therefore, we use the sorted_idx.npy of S4169 to achieve this process. Because, this file is provided as the default selected features.
+TopGBT: pearsonr ranged from 0.32 to 0.35. GeoPPI: pearsonr ranged from 0.34 to 0.39. It is worth noted that GeoPPI authors did not offer the training process. We use
+the limit hyperparameters provided in the paper. Besides, GeoPPI needs select 100-140 features to make a better performance. Therefore, we use the sorted_idx.npy of 
+S4169 to achieve this process. Because, this file is provided as the default selected features.
 
 2023/3/9
 3. Clusters need to be updated. For each chain of one protein complex, ECOD server give a certain H_group name.
