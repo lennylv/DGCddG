@@ -4,7 +4,7 @@
 [2] H. Cheng, Y. Liao, R. D. Schaeffer, N. V. Grishin. (2015) Manual classification strategies in the ECOD database. Proteins 83(7): 1238-1251.
 
 2. The divided folds of S645 is from GeoPPI. While the ecod folds of s4169 and s1131 may not be extremly same with GeoPPI since they randomly generated folds and they 
-did not provide the folds. We simply followed the steps provided by the authors to generate folds of the three datasets. If you get their folds in some way, please 
+did not provide the folds. We simply followed the steps provided by the authors to generate folds of the two datasets. If you get their folds in some way, please 
 contact to me and I will do more experiments although my results are bad enough.
 
 3. How can we make sure these folds are useful?
