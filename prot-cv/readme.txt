@@ -11,10 +11,6 @@ To save time, we use several GPUs to train each fold and save the predicted valu
 - python crossvalidation_s4169.py --Fold 2 --dev 1
 - python crossvalidation_s4169.py --Fold 3 --dev 2
 - python crossvalidation_s4169.py --Fold 4 --dev 3
-- python crossvalidation_s4169.py --Fold 5 --dev 4
-- python crossvalidation_s4169.py --Fold 6 --dev 5
-- python crossvalidation_s4169.py --Fold 7 --dev 6
-- python crossvalidation_s4169.py --Fold 8 --dev 7
 
 3. How can we make sure these folds are useful?
 We validate TopGBT and GeoPPI on the S1131 folds generate by us. We obtained the results as follow: 
