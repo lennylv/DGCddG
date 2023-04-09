@@ -15,11 +15,9 @@ for i in range(1,9):
         rmse.append(np.sqrt(mean_squared_error(p,yy)))
 print(pcc)
 
+print('overall pcc:',pearsonr(y, pred)[0])
 print('mean pcc:',np.mean(pcc))
-print('o pcc:',pearsonr(y, pred)[0])
-print('avg pcc:', (np.mean(pcc)+pearsonr(y, pred)[0])/2)
 
 print()
-print(np.sqrt(mean_squared_error(y,pred)))
-print(np.mean(rmse))
-print('avg rmse:', (np.sqrt(mean_squared_error(y,pred)) + np.mean(rmse))/2)
+print('overall rmse:', np.sqrt(mean_squared_error(y,pred)))
+print('mean rmse:', np.mean(rmse))
