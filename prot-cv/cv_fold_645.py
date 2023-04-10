@@ -35,7 +35,7 @@ parser.add_argument('--wd', type=float, default=0, help='Weight decay (L2 loss o
 parser.add_argument('--layer', type=int, default=4, help='Number of hidden layers.')
 parser.add_argument('--hidden', type=int, default=256,help='Number of hidden.')
 parser.add_argument('--dropout', type=float, default=0.23, help='Dropout rate (1 - keep probability).')
-parser.add_argument('--NODES', type=int, default=645, help='Patience')
+parser.add_argument('--NODES', type=int, default=1000, help='Patience')
 parser.add_argument('--dataset', default='ab645', help='dateset')
 parser.add_argument('--dev', type=int, default=0, help='device id')
 parser.add_argument('--fold', type=int, default=0, help='device id')
