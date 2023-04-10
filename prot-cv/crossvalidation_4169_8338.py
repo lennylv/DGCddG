@@ -253,7 +253,8 @@ for train_index, test_index in split_folds:
                     lamda = args.lamda, 
                     alpha=args.alpha,
                     variant=args.variant,
-                    NODES=NODES).to(device)
+                    NODES=NODES,
+                    relu=False).to(device)
 
     optimizer = optim.Adam( model.parameters(), lr = args.lr, weight_decay = args.wd)
 
