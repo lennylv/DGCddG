@@ -3,3 +3,8 @@ Therefore, the results here are -0.056 and 0.193 for capri_t55 and capri_t56, re
 
 The paper records the result under graphs constructed from multi-chain complex, i.e. -0.0216 and -0.06 for capri_t55 and capri_t56.
 We will update them soon.
+
+For T56.pdb we failed to generate the secondary structure and failed to predicted ss, then we use the most homology protein sequence (>90%) in PDB via blast
+to get the secondary structure as the predicted values.
+
+We also quit the secondary structure information to re-train the model and get results as: T55:0.02, T56:0.027
