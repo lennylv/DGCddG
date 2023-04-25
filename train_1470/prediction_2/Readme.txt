@@ -5,6 +5,6 @@ The paper records the result under graphs constructed from multi-chain complex, 
 We will update them soon.
 
 For T56.pdb we failed to generate the secondary structure and failed to predicted ss, then we use the most homology protein sequence (>90%) in PDB via blast
-to get the secondary structure as the predicted values.
+to get the secondary structure as the similar values.
 
 We also quit the secondary structure information to re-train the model and get results as: T55:0.02, T56:0.027
