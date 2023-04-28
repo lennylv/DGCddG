@@ -1,4 +1,4 @@
-For multi-mutation, aux_features.npy saved the mean value of each single mutation:
+1. For multi-mutation, aux_features.npy saved the mean value of each single mutation:
 For example: an item inclues two single-mutations [pdb, chain1_chain2, wild1_wild2, resid1_resid2, mutant1_mutant2, ddG]
 
 For [chain1 wild1 resid1 mutant1]: dssp module outputs [ss1, asa1, phi1, psi1]
