@@ -25,7 +25,8 @@ We reproduced their results on S645 with these four files, i.e PCC ~ 0.51, as re
 When using our re-generated folds, we got close results, i.e. PCC ~ 0.51.
 
 2023/3/9
-4. Here we give the ECOD H-level clusters, it is different from the Supplementary File:
+4. Here we give the ECOD H-level clusters, it is different from the Supplementary File, however it is really strict. 
+In some cases, TopNetTree (Pearsron) can get droped to -0.01 on S1131. GeoPPI may drop to 0.19 on S4169:
 
 def cluster():
     cluster_dic = {}
