@@ -172,7 +172,7 @@ if SetName == 'ab645':
     for key in divid.keys():
         split_folds.append((divid[key][0], divid[key][1]))
 else:
-    f = open('./' + SetName + '/divided-folds.txt')
+    f = open('./' + SetName + '/divided-ecod-folds-hgroup.txt')
     divid = f.read()
     divid = eval(divid)
     f.close()
