@@ -22,7 +22,7 @@ import sys
 from loaddata_for_cross import *
 # Training settings
 parser = argparse.ArgumentParser()
-parser.add_argument('--seed', type=int, default=42, help='Random seed.')
+parser.add_argument('--seed', type=int, default=1997, help='Random seed.')
 parser.add_argument('--epochs', type=int, default=100, help='Number of epochs to train.')
 # parser.add_argument('--lr', type=float, default=0.0001, help='Initial learning rate.')
 
