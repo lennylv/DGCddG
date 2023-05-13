@@ -218,8 +218,8 @@ elif SetName == 's1131':
     divid = eval(divid)
     split_folds = divid
 else:
-    f = open('./' + SetName + '/divided-folds-93.txt')
-    print('divided-folds-93.txt')
+    f = open('./' + SetName + '/divided-folds-hgroup.txt')
+    print('divided-folds-hgroup.txt')
     divid = f.read()
     f.close()
     divid = eval(divid)
