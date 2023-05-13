@@ -39,7 +39,7 @@ parser.add_argument('--lr', type=float, default=0.0001, help='Initial learning r
 
 parser.add_argument('--warmup_updates', type=int, default=100)
 parser.add_argument('--tot_updates', type=int, default=90)
-parser.add_argument('--peak_lr', type=float, default=1e-4)
+parser.add_argument('--peak_lr', type=float, default=3e-4)
 parser.add_argument('--end_lr', type=float, default=1e-5)
 parser.add_argument('--validation', type=int, default=5)
 
@@ -90,7 +90,7 @@ ske, Y_gr = get_ske_and_labels(SetName)
 
 loss_fcn = torch.nn.MSELoss()
 
-def train(model, optimizer, mut_f, mut_adj, wild_f, wild_adj, labels, wild_array, mut_array, residue_features):
+def train(lr_sch, model, optimizer, mut_f, mut_adj, wild_f, wild_adj, labels, wild_array, mut_array, residue_features):
     model.train()
     loss_tra = 0
     # print(labels.shape)
@@ -129,7 +129,7 @@ def train(model, optimizer, mut_f, mut_adj, wild_f, wild_adj, labels, wild_array
         optimizer.step()
         
         loss_tra += loss_train.item()
-    # lr_sch.step()
+    lr_sch.step()
 
     loss_counter = len(mut_f)
     loss_tra/=loss_counter
@@ -257,14 +257,14 @@ for train_index, test_index in split_folds:
 
     optimizer = optim.Adam( model.parameters(), lr = args.lr, weight_decay = args.wd)
 
-    # lr_scheduler = PolynomialDecayLR(
-    #             optimizer,
-    #             warmup_updates=args.warmup_updates,
-    #             tot_updates=args.tot_updates,
-    #             lr=args.peak_lr,
-    #             end_lr=args.end_lr,
-    #             power=1.0,
-    # )
+    lr_scheduler = PolynomialDecayLR(
+                optimizer,
+                warmup_updates=args.warmup_updates,
+                tot_updates=args.tot_updates,
+                lr=args.peak_lr,
+                end_lr=args.end_lr,
+                power=1.0,
+    )
     # train_loss = []
     bad_count = 0
     best_epoch = 0
@@ -272,7 +272,7 @@ for train_index, test_index in split_folds:
     best_pcc = 0
     t = time.time()
     for epoch in range(args.epochs):
-        loss_train = train(model, optimizer, mut_features_train, mut_adjs_train, wild_features_train, wild_adjs_train, train_labels, train_w_array, train_m_array, train_residue)
+        loss_train = train(lr_sch, model, optimizer, mut_features_train, mut_adjs_train, wild_features_train, wild_adjs_train, train_labels, train_w_array, train_m_array, train_residue)
 
         t1 = time.time()
         tt = t1 - t
