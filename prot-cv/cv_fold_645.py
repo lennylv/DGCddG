@@ -27,13 +27,13 @@ parser.add_argument('--epochs', type=int, default=100, help='Number of epochs to
 # parser.add_argument('--lr', type=float, default=0.0001, help='Initial learning rate.')
 
 parser.add_argument('--warmup_updates', type=int, default=50)
-parser.add_argument('--tot_updates', type=int, default=80)
+parser.add_argument('--tot_updates', type=int, default=90)
 parser.add_argument('--peak_lr', type=float, default=3e-4)
 parser.add_argument('--end_lr', type=float, default=1e-5)
 
 parser.add_argument('--wd', type=float, default=0, help='Weight decay (L2 loss on parameters).')
-parser.add_argument('--layer', type=int, default=4, help='Number of hidden layers.')
-parser.add_argument('--hidden', type=int, default=256,help='Number of hidden.')
+parser.add_argument('--layer', type=int, default=2, help='Number of hidden layers.')
+parser.add_argument('--hidden', type=int, default=512,help='Number of hidden.')
 parser.add_argument('--dropout', type=float, default=0.25, help='Dropout rate (1 - keep probability).')
 parser.add_argument('--NODES', type=int, default=1000, help='Patience')
 parser.add_argument('--dataset', default='ab645', help='dateset')
