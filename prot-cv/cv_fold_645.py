@@ -163,20 +163,14 @@ from sklearn.model_selection import KFold
 kf = KFold(n_splits=10, shuffle = True)
 Loss = []
 
-if SetName == 'ab645':
-    import pickle as pkl
-    f = open('./ab645/divided-folds.pkl', 'rb')
-    divid = pkl.load(f)
-    f.close()
-    split_folds = []
-    for key in divid.keys():
-        split_folds.append((divid[key][0], divid[key][1]))
-else:
-    f = open('./' + SetName + '/divided-folds.txt')
-    divid = f.read()
-    divid = eval(divid)
-    f.close()
-    split_folds = divid
+import pickle as pkl
+f = open('./ab645/divided-folds.pkl', 'rb')
+divid = pkl.load(f)
+f.close()
+split_folds = []
+for key in divid.keys():
+    split_folds.append((divid[key][0], divid[key][1]))
+
 
 v = -1
 ##Y_pred = np.empty(645,)
