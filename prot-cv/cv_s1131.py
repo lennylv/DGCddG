@@ -29,7 +29,7 @@ parser.add_argument('--epochs', type=int, default=300, help='Number of epochs to
 
 parser.add_argument('--warmup_updates', type=int, default=50)
 parser.add_argument('--tot_updates', type=int, default=300)
-parser.add_argument('--peak_lr', type=float, default=3e-4)
+parser.add_argument('--peak_lr', type=float, default=4e-4)
 parser.add_argument('--end_lr', type=float, default=1e-5)
 parser.add_argument('--validation', type=int, default=5)
 
