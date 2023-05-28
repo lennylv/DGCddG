@@ -164,7 +164,7 @@ kf = KFold(n_splits=10, shuffle = True)
 Loss = []
 
 import pickle as pkl
-f = open('./ab645/divided-folds.pkl', 'rb')
+f = open('./ab645_500/divided-folds.pkl', 'rb')
 divid = pkl.load(f)
 f.close()
 split_folds = []
