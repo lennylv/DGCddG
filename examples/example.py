@@ -188,7 +188,7 @@ def generate_adj( select_pos):
     matrix = [[0 for i in range(select_pos.shape[0])] for j in range(select_pos.shape[0])]
 
     t = cKDTree(select_pos)
-    nb_3 = cKDTree.query_pairs(t, 8)
+    nb_3 = cKDTree.query_pairs(t, 10)
     # print(len(nb_3))
     for i,j in nb_3:
         matrix[i][j] = 1
