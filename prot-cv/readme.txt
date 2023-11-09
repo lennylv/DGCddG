@@ -3,9 +3,7 @@
 [1] H. Cheng, R. D. Schaeffer, Y. Liao, L. N. Kinch, J. Pei, S. Shi, B. H. Kim, N. V. Grishin. (2014) ECOD: An evolutionary classification of protein domains. PLoS Comput Biol 10(12): e1003926.
 [2] H. Cheng, Y. Liao, R. D. Schaeffer, N. V. Grishin. (2015) Manual classification strategies in the ECOD database. Proteins 83(7): 1238-1251.
 
-2. The divided folds of S645 is from GeoPPI. While the ecod folds of s4169 and s1131 may not be extremly same with GeoPPI since they randomly generated folds and they 
-did not provide the folds. We simply followed the steps provided by the authors to generate folds of the two datasets. If you get their folds in some way, please 
-contact to me and I will do more experiments although my results are bad enough. 
+2. The divided folds of S645 is from GeoPPI. While the ecod folds of s4169 and s1131 may not be extremly same with GeoPPI since they randomly generated folds and the folds are not available. We simply followed the steps provided by the authors to generate folds of the two datasets. If you get their folds in some way, please email to me and I will do more experiments although my results are bad enough. 
 To save time, we use several GPUs to train each fold and save the predicted values:
 - python crossvalidation_s4169.py --Fold 1 --dev 0
 - python crossvalidation_s4169.py --Fold 2 --dev 1
