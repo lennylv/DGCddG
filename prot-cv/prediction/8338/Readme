@@ -8,4 +8,4 @@ for train, test in s4169_folds:
 
 2. Generate folds from s4169 protein clusters.
 Under different split conditions (for example, the value of folds_number), 1~2 clusters’ size can be bigger than the threshold (s4169/folds_number). With greedy algorithm, the exceed part will be put in the next fold. Obviously, when each cluster’s size is doubled for s8338, the exceed part will be changed.
-  ![image](show.png)
+  ![image](https://github.com/lennylv/DGCddG/tree/main/prot-cv/prediction/8338/show.png)
