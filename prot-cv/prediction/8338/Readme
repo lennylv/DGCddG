@@ -1,4 +1,5 @@
-There are two ways can be used to generate 8338 folds from s4169.
+There are two ways can be used to generate 8338 folds from s4169. We run experiments under these two
+different ways and record the worse results.
 1. Generate folds from s4169 folds.
 fold = 0
 for train, test in s4169_folds:
