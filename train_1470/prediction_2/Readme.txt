@@ -1,5 +1,6 @@
-The labels of SSIPe and our method are dMutant - dWild, then GeoPPI and mCSM-PPI2 are dWild - dMutant,
-Therefore, the output of SSIPe and DGCddG need a reverse before calculating the Kendall coefficient.
+# For ace2
+Due to the labels of SSIPe and our method are dMutant - dWild, then GeoPPI and mCSM-PPI2 are dWild - dMutant,
+Therefore, the output of SSIPe and DGCddG for ace2 need a reverse before calculating the Kendall coefficient.
 
 The capri_t55.npy and capri_t56.npy were calculated based on the graphs constructed from dimers.
 Therefore, the results here are -0.056 and 0.193 for capri_t55 and capri_t56, respectively.
