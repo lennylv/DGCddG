@@ -1,4 +1,3 @@
-# For ace2
 # take 'protein 1A22 ; chain A ; wild C ; id 171 ; mutant A' as an example, See table 2M734 row 1 and table s4169 row 24
 # S4169 were taken from GeoPPI
 Due to the labels of SSIPe and our method are dMutant - dWild, then GeoPPI and mCSM-PPI2 are dWild - dMutant,
